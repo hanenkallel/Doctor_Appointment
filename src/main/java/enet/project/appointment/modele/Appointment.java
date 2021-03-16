@@ -17,7 +17,7 @@ public class Appointment implements Serializable {
 	private Long id;
 	private Date dateRdv ; 
 	@ManyToOne
-	@JoinColumn(name="ID_Patient")
+	@JoinColumn(name="idp")
 	private Patient patient;
 	
 	@ManyToOne

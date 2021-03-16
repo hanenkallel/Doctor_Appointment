@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Patient implements Serializable {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long idp;
 	private String nom;
 	private String prenom;
 	private String numTelephone;
@@ -43,11 +43,11 @@ public class Patient implements Serializable {
 	}
 
 	public Long getId() {
-		return id;
+		return idp;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.idp = id;
 	}
 
 	public String getNom() {
