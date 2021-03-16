@@ -2,6 +2,7 @@ package enet.project.appointment;
 
 import javax.transaction.Transactional;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AppointementApplication {
 
 	public static void main(String[] args) {
-		
+		SpringApplication.run(AppointementApplication.class, args);
 
 	}
 
