@@ -13,14 +13,19 @@ import enet.project.appointment.modele.Patient;
 
 public class AppointementApplication {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(AppointementApplication.class, args);
 	
 		ApplicationContext ctx = SpringApplication.run(AppointementApplication.class, args);
-		
+		@SuppressWarnings("unchecked")
 		patientRepository patientRepository=ctx.getBean(patientRepository.class);
 		
 		patientRepository.save(new Patient( "hanen", "kallel", "29185212", "f", "sfax", "17",
+				"hanen"));
+		patientRepository.save(new Patient( "yasmine", "kallel", "29185212", "f", "sfax", "17",
+				"hanen"));
+		patientRepository.save(new Patient( "yeessine", "kallel", "29185212", "f", "sfax", "17",
 				"hanen"));
 		
 		
