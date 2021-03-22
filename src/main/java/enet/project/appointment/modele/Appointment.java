@@ -6,22 +6,33 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 @Entity
 public class Appointment implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date dateRdv ; 
+	private Date dateRdv;
+	private Boolean isCancelled;
+
 	@ManyToOne
-	@JoinColumn(name="idp")
+	@JoinColumn(name = "idp")
 	private Patient patient;
-	
+
+	public Appointment(Date dateRdv) {
+		super();
+
+		this.dateRdv = dateRdv;
+
+	}
+
 	@ManyToOne
-	private Secretary secretary ;
+	private Secretary secretary;
 
 	public Appointment() {
 		super();
@@ -34,7 +45,6 @@ public class Appointment implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
 
 	public Date getDateRdv() {
 		return dateRdv;
@@ -59,6 +69,5 @@ public class Appointment implements Serializable {
 	public void setSecretary(Secretary secretary) {
 		this.secretary = secretary;
 	}
-	
-	
+
 }

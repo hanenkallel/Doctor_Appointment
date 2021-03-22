@@ -21,11 +21,13 @@ public class Patient implements Serializable {
 	private String region;
 	private String age;
 	private String emailPatient;
+	private String username ; 
+	private String password ; 
 	@OneToMany
 	private Collection<Appointment> appointment;
 
 	public Patient( String nom, String prenom, String numTelephone, String sexe, String region, String age,
-			String emailPatient) {
+			String emailPatient,String username ,String password) {
 		super();
 		
 		this.nom = nom;
@@ -35,6 +37,8 @@ public class Patient implements Serializable {
 		this.region = region;
 		this.age = age;
 		this.emailPatient = emailPatient;
+		this.username=username ; 
+		this.password=password ; 
 		
 	}
 
@@ -112,6 +116,22 @@ public class Patient implements Serializable {
 
 	public void setAppointment(Collection<Appointment> appointment) {
 		this.appointment = appointment;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
