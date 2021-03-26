@@ -15,7 +15,7 @@ import enet.project.appointment.modele.Patient;
 public interface appointmentRepository extends JpaRepository<Appointment,Long> {
 	
 	@Query("select u from Appointment u where u.id=?1")
-	List<Appointment> findByAppointmentId(Long id);
+	Appointment findByAppointmentId(Long id);
 	
 	
 	@Query("select u from Appointment u where u.dateRdv=?1")
