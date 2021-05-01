@@ -2,12 +2,15 @@ package enet.project.appointment.modele;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Patient implements Serializable {
@@ -21,8 +24,11 @@ public class Patient implements Serializable {
 	private String region;
 	private String age;
 	private String emailPatient;
-
 	private String password ; 
+	
+
+
+	String dateRdv;
 	@OneToMany
 	private Collection<Appointment> appointment;
 
@@ -45,13 +51,23 @@ public class Patient implements Serializable {
 	
 	}
 
-	public Long getId() {
+	
+	public Long getIdp() {
 		return idp;
 	}
 
-	public void setId(Long id) {
-		this.idp = id;
+	public void setIdp(Long idp) {
+		this.idp = idp;
 	}
+
+	public String getDateRdv() {
+		return dateRdv;
+	}
+
+	public void setDateRdv(String dateRdv) {
+		this.dateRdv = dateRdv;
+	}
+	
 
 	public String getNom() {
 		return nom;

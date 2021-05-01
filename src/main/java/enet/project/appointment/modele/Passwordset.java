@@ -1,6 +1,6 @@
 package enet.project.appointment.modele;
 
-public class Password {
+public class Passwordset {
 	String newpassword ;
 	String password ;
 	Long userId ;

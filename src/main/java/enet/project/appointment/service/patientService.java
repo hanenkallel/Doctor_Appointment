@@ -4,8 +4,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import enet.project.appointment.dao.patientRepository;
+import enet.project.appointment.modele.Appointment;
 import enet.project.appointment.modele.Patient;
 
 @Service
@@ -53,5 +55,14 @@ public class patientService {
 			return true;
 		}
 		return false;
+	}
+	
+	
+	public boolean isAccepted( Appointment e) {
+		if(e.getIsAccepted()) {
+			System.out.println("sendmail");
+			return true ;
+		}
+		return false ;
 	}
 }

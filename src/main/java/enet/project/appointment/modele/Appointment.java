@@ -21,7 +21,8 @@ public class Appointment implements Serializable {
 	private Long id;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateRdv;
-	private Boolean isCancelled;
+	private Boolean isAccepted;
+	
 
 	@ManyToOne
 	@JoinColumn(name = "idp")
@@ -29,7 +30,6 @@ public class Appointment implements Serializable {
 
 	public Appointment(Date dateRdv) {
 		super();
-
 		this.dateRdv = dateRdv;
 
 	}
@@ -72,5 +72,14 @@ public class Appointment implements Serializable {
 	public void setSecretary(Secretary secretary) {
 		this.secretary = secretary;
 	}
+
+	public Boolean getIsAccepted() {
+		return isAccepted;
+	}
+
+	public void setIsAccepted(Boolean isAccepted) {
+		this.isAccepted = isAccepted;
+	}
+	
 
 }
